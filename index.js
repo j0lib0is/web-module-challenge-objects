@@ -19,9 +19,9 @@ The function should:
 
 function createMenuItem(name, price, category){
     let newObject = {
-      name: name,
-      price: price,
-      category: category,
+      name,
+      price,
+      category,
     }
     return newObject;
 }
@@ -101,28 +101,35 @@ Using the reviews array above:
 
 
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
-  1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
-  2. Log the reviews array to the console to check your work
+  1. ✅ Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+  2. ✅ Log the reviews array to the console to check your work
 */
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
-
-console.log(reviews);
+// TEST
+// console.log(reviews);
 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
  the addReview function below to do the following:
-  1. Receive an array
-  2. Receive the following object keys name, rating, feedback
-  3. The function should push the following object to the array: {name: 'Daniela', rating: 5, review: 'Beautiful atmosphere and wonderful vegan options!' }
-  4. should return the resulting array
+  1. ✅ Receive an array
+  2. ✅ Receive the following object keys name, rating, feedback
+  3. ✅ The function should push the following object to the array: {name: 'Daniela', rating: 5, review: 'Beautiful atmosphere and wonderful vegan options!' }
+  4. ✅ Should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array, name, rating, feedback){
+  const newReview = {
+    name,
+    rating,
+    feedback,
+  }
+  array.push(newReview);
+  return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
