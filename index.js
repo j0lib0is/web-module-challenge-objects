@@ -59,6 +59,7 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+
 const burger = {
   name: "Burger", 
   price: 18, 
@@ -106,6 +107,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. ✅ Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. ✅ Log the reviews array to the console to check your work
 */
+
 reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
 // TEST
@@ -113,7 +115,7 @@ reviews[7].feedback = "this place is chill with really cool people, great for ge
 
 
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
  the addReview function below to do the following:
   1. ✅ Receive an array
@@ -132,39 +134,49 @@ function addReview(array, name, rating, feedback){
   return array;
 }
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+
+
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
 
 Use the getReviewByIndex function below to do the following:
-  1. Receive an array
-  2. Receive a number which is the desired index in the array
-  3. The function should return the following string: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
+  1. ✅ Receive an array
+  2. ✅ Receive a number which is the desired index in the array
+  3. ✅ The function should return the following string: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}`;
 }
 
+getReviewByIndex(reviews, 0);
+
+// TEST
+// console.log(getReviewByIndex(reviews, 0));
 
   
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
 
 Use the getLastReview function below to do the following:
-  1. Receive an array of objects as a parameter
-  2. Return the last index as a string in the format: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
-  3. Invoke the function with the reviews array as the argument
+  1. ✅ Receive an array of objects as a parameter
+  2. ✅ Return the last index as a string in the format: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
+  3. ✅ Invoke the function with the reviews array as the argument
   
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
+function getLastReview(array) {
+  let lastReview = array[array.length - 1];
+  return `${lastReview.name} gave the restaurant a ${lastReview.rating} star review, and their feedback was: ${lastReview.feedback}`;
+}
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
-} 
+getLastReview(reviews);
+
+// TEST
+// console.log(getLastReview(reviews));
 
 
 
