@@ -262,16 +262,22 @@ Use the carMaker function below to do the following:
 */
 
 function carMaker(odometer) {
+    // Create a parameter representing the odometer reading ^
+    // Create an object and key the odometer argument to an odometer key
     const car = {
       odometer: odometer,
+      // Create a drive method
       drive: function(distance) {
+        // Pass in distance drove as a parameter
+        // Increase the odometer's reading by distance drove and return the total
         return this.odometer + distance;
       },
     }
+    // Return the object
     return car;
 }
 
-const car1 = carMaker(10000);
+const car1 = carMaker(10);
 
 // TEST OBJECT CREATION
 // console.log(car1);
