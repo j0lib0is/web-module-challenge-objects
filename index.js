@@ -180,13 +180,13 @@ getLastReview(reviews);
 
 
 
-///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
+///////////////🍔☕️🍽 ✅ STRETCH🍔☕️🍽////////////////////
 
 /** 💪💪💪💪💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪💪💪💪💪 
 Use the getReviewsByRating function below to do the following:
-  1. Receive the array that holds all the reviews
-  2. Receive a rating
-  3. Return an array with all the reviews in that range
+  1. ✅ Receive the array that holds all the reviews
+  2. ✅ Receive a rating
+  3. ✅ Return an array with all the reviews in that range
 
   For example: getReviewByRating(reviews, 4) would return these reviews in the 4 range (4-4.9):
   [
@@ -196,15 +196,27 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+function getReviewByRating(array, ratingBase) {
+  const ratingRange = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].rating >= ratingBase && array[i].rating < ratingBase + 1) {
+      ratingRange.push(array[i]);
+    }
   }
+  return ratingRange;
+}
 
-  
-/* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
+getReviewByRating(reviews, 4);
+
+// TEST
+// console.log(getReviewByRating(reviews, 4));
+
+
+
+/* 💪💪💪💪💪💪💪💪💪💪 ✅ STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
-  1. Receive the array that holds all the reviews
-  2. Return an array with all the reviews that have more than 15 words in their feedback
+  1. ✅ Receive the array that holds all the reviews
+  2. ✅ Return an array with all the reviews that have more than 15 words in their feedback
 
   For example: getLongReviews(reviews) would return:
   [
@@ -214,19 +226,32 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(array) {
+  const longReviews = [];
+  for (let i = 0; i < array.length; i++) {
+    const words = array[i].feedback.split(' ');
+    if (words.length > 15) {
+      longReviews.push(array[i]);
+    }
   }
-  
+  return longReviews;
+}
 
-/* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
+getLongReviews(reviews);
+
+// TEST
+// console.log(getLongReviews(reviews));
+
+
+
+/* 💪💪💪💪💪💪💪💪💪💪 ✅ STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
 
 Use the carMaker function below to do the following:
-  1. Receive a value representing the odometer (how many miles it's been driven) and use that when creating the object
-  2. Create a drive method inside the object that increases the odometer value
-  3. Return the object
-  4. The returned object with the odometer value should have the following characteristics:
+  1. ✅ Receive a value representing the odometer (how many miles it's been driven) and use that when creating the object
+  2. ✅ Create a drive method inside the object that increases the odometer value
+  3. ✅ Return the object
+  4. ✅ The returned object with the odometer value should have the following characteristics:
      a. The drive method which, when called, takes a distance value as its parameter
      b. The drive method should also cause the odometer value in the object to be increased by the distance
      c. Then the drive method should return the updated value of the odometer
@@ -236,11 +261,24 @@ Use the carMaker function below to do the following:
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
 
-
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(odometer) {
+    const car = {
+      odometer: odometer,
+      drive: function(distance) {
+        return this.odometer + distance;
+      },
+    }
+    return car;
 }
+
+const car1 = carMaker(10000);
+
+// TEST OBJECT CREATION
+// console.log(car1);
+
+// TEST DRIVE METHOD
+// console.log(car1.drive(100));
+
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
