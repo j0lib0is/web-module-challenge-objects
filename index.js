@@ -6,40 +6,56 @@
 const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+
+
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
 The function should:
-  1. Receive values for the object that will be created as parameters
-  2. Create and return an object using the received values 
+  1. ✅ Receive values for the object that will be created as parameters
+  2. ✅ Create and return an object using the received values 
   
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    let newObject = {
+      name: name,
+      price: price,
+      category: category,
+    }
+    return newObject;
 }
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+createMenuItem('Tacos', 8, 'Lunch');
+
+
+
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
 Test your createMenuItems function by doing the following:
-  1. Pass values to createMenuItems in order to create the objects (menu items)
-  2. Create at least 3 menu items (objects) of your choosing making sure they have name, price, and category keys
-  3. Log each returned object to the console  
+  1. ✅ Pass values to createMenuItems in order to create the objects (menu items)
+  2. ✅ Create at least 3 menu items (objects) of your choosing making sure they have name, price, and category keys
+  3. ✅ Log each returned object to the console  
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+// TEST
+// console.log(createMenuItem('Kebabs', 12, 'Lunch'));
+// console.log(createMenuItem('Steak', 22, 'Dinner'));
+// console.log(createMenuItem('Pizza', 5, 'Lunch'));
 
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
 burger object below that automatically calculates price depending on the a string received as a parameter. 
 
 Using the burger object below do the following:
-  1. Add a method called discount to the burger object 
-  2. The discount method should accept a string as a parameter (example: "teacher", "student", or "public")
-  3. Depending on the string, it will return the correct discounted price
-  4. Check your work by invoking the function and passing in 'teacher', 'student', or 'public' as your arguments to ensure they are returning the correct price.
+  1. ✅ Add a method called discount to the burger object 
+  2. ✅ The discount method should accept a string as a parameter (example: "teacher", "student", or "public")
+  3. ✅ Depending on the string, it will return the correct discounted price
+  4. ✅ Check your work by invoking the function and passing in 'teacher', 'student', or 'public' as your arguments to ensure they are returning the correct price.
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
@@ -47,8 +63,19 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(type) {
+    if (type === 'teacher' || type === 'student') {
+      return this.price * 0.75;
+    } else if (type === 'public') {
+      return this.price * 0.9;
+    }
+  },
 }
+
+burger.discount('teacher');
+
+// TEST
+// console.log(burger.discount('teacher'));
 
 
 
@@ -64,21 +91,24 @@ const reviews = [
     {name: "Reyna", rating: 3.5, feedback: ""},
 ]
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ✅ Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
-  1. log only Julius' feedback to the console - no function needed 
+  1. ✅ Log only Julius' feedback to the console - no function needed 
 */
 
+// TEST
+// console.log(reviews[5].feedback);
 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
-  2. log the reviews array to the console to check your work
+  2. Log the reviews array to the console to check your work
 */
 
 
+console.log(reviews);
 
 
 
